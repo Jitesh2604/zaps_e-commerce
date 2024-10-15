@@ -5,8 +5,8 @@ import Footer from "./components/custom/footer/footer";
 import Signup from "./components/custom/signup/signup";
 import Signin from "./components/custom/signin/signin";
 import Category from "./components/custom/category/category";
-import Profile from "./components/custom/profile/profile"
-import SearchPage from "./components/custom/searchPage/searchPage"
+import Profile from "./components/custom/profile/profile";
+import SearchPage from "./components/custom/searchPage/searchPage";
 import Cart from "./components/custom/cart/cart";
 import SingleProductPage from "./components/custom/singleItem/singleItem";
 import { AuthProvider } from "./context/authContext";
@@ -15,11 +15,12 @@ import "./App.css";
 function App() {
   return (
     <AuthProvider>
+      {/* Uncomment ProductProvider if needed */}
       {/* <ProductProvider> */}
-        <div className="min-h-screen w-full flex flex-col">
-          <div className="text-center py-4 w-full">
-            <Router>
-              <Navbar />
+        <Router>
+          <div className="min-h-screen w-full flex flex-col">
+            <Navbar />
+            <div className="text-center py-4 w-full">
               <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/signup" element={<Signup />} />
@@ -30,10 +31,10 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/searchQueary" element={<SearchPage />} />
               </Routes>
-              <Footer />
-            </Router>
+            </div>
+            <Footer />
           </div>
-        </div>
+        </Router>
       {/* </ProductProvider> */}
     </AuthProvider>
   );
