@@ -2,3 +2,6 @@ bdoy {
     margin: 0;
     padding: 0;
 }
+Link {
+    cursor: pointer;
+}

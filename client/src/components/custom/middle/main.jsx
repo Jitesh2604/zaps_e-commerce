@@ -48,7 +48,7 @@ const Main = () => {
     <main className="flex-1 w-full mt-[50px]">
       <div className="container w-full ">
         {/* {big dec sale} */}
-        <div className="border border-black-500 w-[112.5%] p-[50px] bg-teal-700">
+        <div className="border border-black-500 w-[100%] p-[50px] bg-teal-700">
           <h1 className="text-[30px] font-bold">The Big December Sale</h1>
           <h3 className="text-[20px] font-bold mb-3">
             Its an autumn come true. Explore HUGE deals up to 80% off!

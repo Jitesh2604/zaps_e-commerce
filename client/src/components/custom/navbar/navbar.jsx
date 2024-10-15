@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, ShoppingCart, User, LogOut } from "lucide-react";
 import { Button } from "../../ui/button";
 import {
@@ -233,14 +233,14 @@ const Navbar = () => {
                   </DialogHeader>
                   <div className="grid grid-cols-2 gap-4">
                     {category.subcategories.map((subcategory) => (
-                      <a
+                      <Link
                         key={subcategory}
                         to="/category"
                         className="text-blue-600 hover:underline"
                         onClick={handleCloseDialog}
                       >
                         {subcategory}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </DialogContent>
