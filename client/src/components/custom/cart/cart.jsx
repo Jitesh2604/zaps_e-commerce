@@ -159,7 +159,7 @@ const Cart = () => {
                       </select>
                       <ChevronDown />
                     </div>
-                    <a href="#" style={styles.removeLink}>Remove</a>
+                    <a to="#" style={styles.removeLink}>Remove</a>
                   </td>
                 </tr>
               ))}

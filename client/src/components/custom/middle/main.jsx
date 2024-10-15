@@ -53,7 +53,7 @@ const Main = () => {
           <h3 className="text-[20px] font-bold mb-3">
             Its an autumn come true. Explore HUGE deals up to 80% off!
           </h3>
-          <Link href="/category" className="text-[15px] mb-3 underline hover:text-blue-900">
+          <Link to="/category" className="text-[15px] mb-3 underline hover:text-blue-900">
             Shop the sale
           </Link>
         </div>
@@ -64,7 +64,7 @@ const Main = () => {
           <div className="w-[100%] bg-amber-100 mt-[-2px] p-[20px]">
             <h3 className="text-[20px] font-bold mb-3">Head-To-Toe Fall</h3>
             <br />
-            <Link href="/category" className="underline hover:text-blue-900 font-bold">
+            <Link to="/category" className="underline hover:text-blue-900 font-bold">
               shop Women Fall Favorites
             </Link>
           </div>
@@ -82,7 +82,7 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Just-In Brooks
               </Link>
             </div>
@@ -93,7 +93,7 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Running Shoes
               </Link>
             </div>
@@ -104,7 +104,7 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Ankle Booties
               </Link>
             </div>
@@ -115,7 +115,7 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Kid's Boots
               </Link>
             </div>
@@ -126,7 +126,7 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Flats
               </Link>
             </div>
@@ -148,7 +148,7 @@ const Main = () => {
               <p>
                 Waterproof picks made for <br /> what fall in store
               </p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Hunter
               </Link>
             </div>
@@ -159,7 +159,7 @@ const Main = () => {
                 className="shadow-md mb-[20px] h-[450px]"
               />
               <p>Sport laid-back, classic kiks form br to bonfire</p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Lifestyle Sneakers
               </Link>
             </div>
@@ -170,7 +170,7 @@ const Main = () => {
                 className="shadow-md mb-[20px] h-[450px]"
               />
               <p>these lace-up beautys will complete erery outfit</p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Lace-Up Boots
               </Link>
             </div>
@@ -185,10 +185,10 @@ const Main = () => {
             rewards on <br /> 10/8 & 10/9
           </h3>
           <div className="flex w-[250px] items-center justify-evenly m-auto">
-            <Link href="" className="underline hover:text-blue-700">
+            <Link to="" className="underline hover:text-blue-700">
               Link Your Prime
             </Link>
-            <a href="" className="underline hover:text-blue-700">
+            <a to="" className="underline hover:text-blue-700">
               Join VIP
             </a>
           </div>
@@ -205,7 +205,7 @@ const Main = () => {
               <p>
                 Train indore or run outside in <br /> ultra-comfortable snakers.
               </p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop On
               </Link>
             </div>
@@ -239,7 +239,7 @@ const Main = () => {
               <p className="text-white text-2xl font-bold">
                 New <br /> Aeeivals
               </p>
-              <Link href="/category" className="text-white underline font-bold">
+              <Link to="/category" className="text-white underline font-bold">
                 Find More Fresh Picks
               </Link>
             </div>
@@ -313,7 +313,7 @@ const Main = () => {
                 <br />
                 pairing are all the rage.
               </p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop ASICS
               </Link>
             </div>
@@ -328,7 +328,7 @@ const Main = () => {
                 pieces find their prefect <br />
                 partners? Style magic.
               </p>
-              <Link href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Favorite Pairings
               </Link>
             </div>
@@ -343,7 +343,7 @@ const Main = () => {
                 appeal into your wardrobe <br />
                 with our top picks.
               </p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <a to="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Sam Edelman
               </a>
             </div>
@@ -506,7 +506,7 @@ const Main = () => {
                 </p>
                 <img src={vipLogo} className="h-[100px] w-[150px]" />
               </div>
-              <Link href="" className="text-start underline hover:text-blue-500">
+              <Link to="" className="text-start underline hover:text-blue-500">
                 Join VIP
               </Link>
             </div>
@@ -517,7 +517,7 @@ const Main = () => {
                 </p>
                 <img src={primeLogo} className="h-[100px] w-[150px]" />
               </div>
-              <Link href="" className="text-start underline hover:text-blue-500">
+              <Link to="" className="text-start underline hover:text-blue-500">
                 Link Your Prie
               </Link>
             </div>
@@ -528,7 +528,7 @@ const Main = () => {
                 </p>
                 <img src={zapposLogo} className="h-[100px] w-[150px]" />
               </div>
-              <Link href="" className="text-start underline hover:text-blue-500">
+              <Link to="" className="text-start underline hover:text-blue-500">
                 Download the App
               </Link>
             </div>

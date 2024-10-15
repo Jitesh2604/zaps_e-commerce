@@ -67,15 +67,15 @@ const SingleProductPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <nav className="text-sm mb-4">
-        <a href="#" className="text-blue-600 hover:underline">
+        <a to="#" className="text-blue-600 hover:underline">
           Back
         </a>{" "}
         |
-        <a href="#" className="text-blue-600 hover:underline">
+        <a to="#" className="text-blue-600 hover:underline">
           Shoes
         </a>{" "}
         /
-        <a href="#" className="text-blue-600 hover:underline">
+        <a to="#" className="text-blue-600 hover:underline">
           Sneakers & Athletic Shoes
         </a>{" "}
         /<span className="font-bold">{product.brand}</span>

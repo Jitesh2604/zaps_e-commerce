@@ -99,7 +99,7 @@ const Navbar = () => {
   return (
     <header className="w-full border-b-2">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex-shrink-0">
+        <a to="/" className="flex-shrink-0">
           <img
             src={logo}
             alt="Logo"
@@ -138,10 +138,10 @@ const Navbar = () => {
               {user ? (
                 <>
                   <DropdownMenuItem>
-                    <a href="/profile">Profile</a>
+                    <a to="/profile">Profile</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="/orders">Orders</a>
+                    <a to="/orders">Orders</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={handleLogout}>
                     <LogOut className="mr-2 h-4 w-4" />
@@ -189,7 +189,7 @@ const Navbar = () => {
                     <p className="text-sm text-gray-600 text-center">
                       Don't have an account?{" "}
                       <a
-                        href="/signup"
+                        to="/signup"
                         className="font-medium text-blue-600 hover:underline"
                       >
                         Sign up
@@ -235,7 +235,7 @@ const Navbar = () => {
                     {category.subcategories.map((subcategory) => (
                       <a
                         key={subcategory}
-                        href="/category"
+                        to="/category"
                         className="text-blue-600 hover:underline"
                         onClick={handleCloseDialog}
                       >

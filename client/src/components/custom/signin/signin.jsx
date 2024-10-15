@@ -93,12 +93,12 @@ export default function Signin() {
           </form>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
-          <a href="/forgot-password" className="text-sm text-blue-600 hover:underline">
+          <a to="/forgot-password" className="text-sm text-blue-600 hover:underline">
             Forgot your password?
           </a>
           <p className="text-sm text-gray-600 text-center">
             Don't have an account?{" "}
-            <a href="/signup" className="font-medium text-blue-600 hover:underline">
+            <a to="/signup" className="font-medium text-blue-600 hover:underline">
               Sign up
             </a>
           </p>
