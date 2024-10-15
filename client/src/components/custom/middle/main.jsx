@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Star } from "lucide-react";
 import { Label } from "../../ui/label";
@@ -32,7 +32,7 @@ const Main = () => {
   const getData = async() => {
     try {
       const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/product`);
-      // console.log(response.data);
+      console.log(response.data);
       setProducts(response.data);
       
     } catch (err) {
@@ -53,9 +53,9 @@ const Main = () => {
           <h3 className="text-[20px] font-bold mb-3">
             Its an autumn come true. Explore HUGE deals up to 80% off!
           </h3>
-          <a href="/category" className="text-[15px] mb-3 underline hover:text-blue-900">
+          <Link href="/category" className="text-[15px] mb-3 underline hover:text-blue-900">
             Shop the sale
-          </a>
+          </Link>
         </div>
 
         {/* {poster} */}
@@ -64,9 +64,9 @@ const Main = () => {
           <div className="w-[100%] bg-amber-100 mt-[-2px] p-[20px]">
             <h3 className="text-[20px] font-bold mb-3">Head-To-Toe Fall</h3>
             <br />
-            <a href="/category" className="underline hover:text-blue-900 font-bold">
+            <Link href="/category" className="underline hover:text-blue-900 font-bold">
               shop Women Fall Favorites
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -82,9 +82,9 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Just-In Brooks
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg  overflow-hidden h-[350px]">
@@ -93,9 +93,9 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Running Shoes
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden h-[350px]">
@@ -104,9 +104,9 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Ankle Booties
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden h-[350px]">
@@ -115,9 +115,9 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Kid's Boots
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg overflow-hidden h-[350px]">
@@ -126,9 +126,9 @@ const Main = () => {
                 alt="nikeShoe"
                 className="shadow-md mb-[20px] h-[300px]"
               />
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Flats
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -148,9 +148,9 @@ const Main = () => {
               <p>
                 Waterproof picks made for <br /> what fall in store
               </p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Hunter
-              </a>
+              </Link>
             </div>
             <div className="bg-white rounded-lg  overflow-hidden h-[500px]">
               <img
@@ -159,9 +159,9 @@ const Main = () => {
                 className="shadow-md mb-[20px] h-[450px]"
               />
               <p>Sport laid-back, classic kiks form br to bonfire</p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Lifestyle Sneakers
-              </a>
+              </Link>
             </div>
             <div className="bg-white rounded-lg overflow-hidden h-[500px]">
               <img
@@ -170,9 +170,9 @@ const Main = () => {
                 className="shadow-md mb-[20px] h-[450px]"
               />
               <p>these lace-up beautys will complete erery outfit</p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Lace-Up Boots
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -185,9 +185,9 @@ const Main = () => {
             rewards on <br /> 10/8 & 10/9
           </h3>
           <div className="flex w-[250px] items-center justify-evenly m-auto">
-            <a href="" className="underline hover:text-blue-700">
+            <Link href="" className="underline hover:text-blue-700">
               Link Your Prime
-            </a>
+            </Link>
             <a href="" className="underline hover:text-blue-700">
               Join VIP
             </a>
@@ -205,9 +205,9 @@ const Main = () => {
               <p>
                 Train indore or run outside in <br /> ultra-comfortable snakers.
               </p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop On
-              </a>
+              </Link>
             </div>
             <div className="bg-white rounded-lg  overflow-hidden">
               <img
@@ -239,9 +239,9 @@ const Main = () => {
               <p className="text-white text-2xl font-bold">
                 New <br /> Aeeivals
               </p>
-              <a href="/category" className="text-white underline font-bold">
+              <Link href="/category" className="text-white underline font-bold">
                 Find More Fresh Picks
-              </a>
+              </Link>
             </div>
           </div>
           
@@ -313,9 +313,9 @@ const Main = () => {
                 <br />
                 pairing are all the rage.
               </p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop ASICS
-              </a>
+              </Link>
             </div>
             <div className="bg-white rounded-lg  overflow-hidden h-[500px]">
               <img
@@ -328,9 +328,9 @@ const Main = () => {
                 pieces find their prefect <br />
                 partners? Style magic.
               </p>
-              <a href="/category" className="underline hover:text-blue-900 font-bold">
+              <Link href="/category" className="underline hover:text-blue-900 font-bold">
                 Shop Favorite Pairings
-              </a>
+              </Link>
             </div>
             <div className="bg-white rounded-lg overflow-hidden h-[500px]">
               <img
@@ -506,9 +506,9 @@ const Main = () => {
                 </p>
                 <img src={vipLogo} className="h-[100px] w-[150px]" />
               </div>
-              <a href="" className="text-start underline hover:text-blue-500">
+              <Link href="" className="text-start underline hover:text-blue-500">
                 Join VIP
-              </a>
+              </Link>
             </div>
             <div className="border border-black text-start p-[10px] rounded-[20px]">
               <div className="flex justify-evenly">
@@ -517,9 +517,9 @@ const Main = () => {
                 </p>
                 <img src={primeLogo} className="h-[100px] w-[150px]" />
               </div>
-              <a href="" className="text-start underline hover:text-blue-500">
+              <Link href="" className="text-start underline hover:text-blue-500">
                 Link Your Prie
-              </a>
+              </Link>
             </div>
             <div className="border border-black text-start p-[10px] rounded-[20px]">
               <div className="flex justify-evenly">
@@ -528,9 +528,9 @@ const Main = () => {
                 </p>
                 <img src={zapposLogo} className="h-[100px] w-[150px]" />
               </div>
-              <a href="" className="text-start underline hover:text-blue-500">
+              <Link href="" className="text-start underline hover:text-blue-500">
                 Download the App
-              </a>
+              </Link>
             </div>
           </div>
         </div>
