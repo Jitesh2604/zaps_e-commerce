@@ -29,7 +29,7 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/singleProduct" element={<SingleProductPage />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route path="/searchQueary" element={<SearchPage />} />
+                <Route path="/searchPage" element={<SearchPage />} />
               </Routes>
             </div>
             <Footer />

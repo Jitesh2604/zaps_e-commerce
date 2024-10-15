@@ -66,8 +66,8 @@ const Navbar = () => {
   // Handle search submission
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    
     if (searchQuery.trim()) {
-      // Navigate to the search results page, passing the search query
       navigate("/searchPage", { state: { searchQuery } });
     }
   };

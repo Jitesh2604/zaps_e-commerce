@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import {
@@ -16,11 +16,13 @@ const SearchPage = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const { searchQuery } = location.state || { searchQuery: ""};
+  const navigate = useNavigate();
 
+  console.log(searchQuery);
   const getDataFromCategory = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_APP_API_URL}/product/category/${searchQuery}`
+        `${import.meta.env.VITE_APP_API_URL}/product/search/${searchQuery}`
       );
       setData(response.data);
     } catch (err) {
@@ -31,6 +33,8 @@ const SearchPage = () => {
   useEffect(() => {
     getDataFromCategory();
   }, []);
+
+  console.log(data);
 
   const handleSingleProduct = (product) => {
     navigate("/singleProduct", { state: { product } });
