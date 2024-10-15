@@ -18,10 +18,10 @@ export const AuthProvider = ({ children }) => {
             .then(response => {
                 setUser(response.data);
             })
-            . catch (()=>{
-                setUser(null)
+            .catch(() => {
+                setUser(null);
             })
-            .finally (() => {
+            .finally(() => {
                 setLoading(false);
             });
         } else {
@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
         }  
     }, []);
 
-    
+    // console.log(user);
     
     const login = async (email, password, rememberMe) => {
         try {
@@ -38,15 +38,16 @@ export const AuthProvider = ({ children }) => {
             const refreshToken = response.data.refreshToken;
 
             if(rememberMe) {
-                localStorage.setItem('accessToekn', accessToken);
-                localStorage.setItem('refreshToekn', refreshToken);
-            }else{
-                sessionStorage.setItem('accessToekn', accessToken);
-                sessionStorage.setItem('refreshToekn', refreshToken);
-            };
+                localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('refreshToken', refreshToken);
+            } else {
+                sessionStorage.setItem('accessToken', accessToken);
+                sessionStorage.setItem('refreshToken', refreshToken);
+            }
 
             setUser(response.data.user);
         } catch (error) {
+            console.error("Login error:", error);
             throw new Error("Invalid credentials");
         }
     };
@@ -54,14 +55,14 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         localStorage.removeItem('accessToken');
         sessionStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToekn');
-        sessionStorage.removeItem('refreshToekn');
+        localStorage.removeItem('refreshToken');
+        sessionStorage.removeItem('refreshToken');
         setUser(null);
     };
 
     return (
         <AuthContext.Provider value={{ user, login, logout, loading }}>
-            { children }
+            {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};

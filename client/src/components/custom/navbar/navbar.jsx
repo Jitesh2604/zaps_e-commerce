@@ -17,7 +17,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../ui/dialog";
-import { AuthContext } from "@/context/authContext";
+import { AuthContext } from "@/context/authContext"; // Make sure this path is correct
 import logo from "../../../assets/logo.png";
 
 const Navbar = () => {
@@ -25,7 +25,8 @@ const Navbar = () => {
   const [openCategory, setOpenCategory] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [searchQuery, setSearchQuery] = useState(""); // Search query state
+  const [searchQuery, setSearchQuery] = useState(""); 
+  const [openSignIn, setOpenSignIn] = useState(false);
   const navigate = useNavigate();
 
   // Handle login
@@ -33,6 +34,9 @@ const Navbar = () => {
     e.preventDefault();
     try {
       await login(email, password);
+      // Optionally reset form fields after successful login
+      setEmail("");
+      setPassword("");
     } catch (error) {
       alert(error.message);
     }
@@ -41,6 +45,7 @@ const Navbar = () => {
   // Handle logout
   const handleLogout = async () => {
     await logout();
+    navigate("/"); // Redirect to home page or sign-in page after logout
   };
 
   // Handle category clicks
@@ -63,51 +68,35 @@ const Navbar = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       // Navigate to the search results page, passing the search query
-      navigate("/searchPage", { state: { searchQuery: "" } });
+      navigate("/searchPage", { state: { searchQuery } });
+    }
+  };
+
+  const handleCartClick = () => {
+    if (user) {
+      navigate("/cart"); 
+    } else {
+      setOpenSignIn(true);
     }
   };
 
   const categories = [
     { name: "New", subcategories: ["New Arrivals", "Trending", "Bestsellers"] },
-    {
-      name: "Women",
-      subcategories: ["Clothing", "Shoes", "Accessories", "Beauty"],
-    },
-    {
-      name: "Men",
-      subcategories: ["Clothing", "Shoes", "Accessories", "Grooming"],
-    },
+    { name: "Women", subcategories: ["Clothing", "Shoes", "Accessories", "Beauty"] },
+    { name: "Men", subcategories: ["Clothing", "Shoes", "Accessories", "Grooming"] },
     { name: "Kids", subcategories: ["Girls", "Boys", "Baby", "Toys"] },
-    {
-      name: "Collection",
-      subcategories: ["Summer", "Winter", "Spring", "Fall"],
-    },
-    {
-      name: "Brand",
-      subcategories: ["Popular Brands", "Luxury", "Sustainable"],
-    },
-    {
-      name: "Sale",
-      subcategories: ["Clearance", "Last Chance", "Bundle Deals"],
-    },
-    {
-      name: "Gifts",
-      subcategories: ["For Her", "For Him", "For Kids", "Home"],
-    },
+    { name: "Collection", subcategories: ["Summer", "Winter", "Spring", "Fall"] },
+    { name: "Brand", subcategories: ["Popular Brands", "Luxury", "Sustainable"] },
+    { name: "Sale", subcategories: ["Clearance", "Last Chance", "Bundle Deals"] },
+    { name: "Gifts", subcategories: ["For Her", "For Him", "For Kids", "Home"] },
   ];
 
   return (
     <header className="w-full border-b-2">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a to="/" className="flex-shrink-0">
-          <img
-            src={logo}
-            alt="Logo"
-            width={150}
-            height={115}
-            className="h-[80px] w-auto"
-          />
-        </a>
+        <Link to="/" className="flex-shrink-0">
+          <img src={logo} alt="Logo" width={150} height={115} className="h-[80px] w-auto" />
+        </Link>
 
         <div className="flex-1 mx-10">
           <form onSubmit={handleSearchSubmit} className="relative w-full max-w-[450px] mx-auto">
@@ -118,10 +107,7 @@ const Navbar = () => {
               placeholder="Search products and categories"
               className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <Search
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-              size={20}
-            />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
           </form>
         </div>
 
@@ -137,11 +123,11 @@ const Navbar = () => {
               <DropdownMenuSeparator />
               {user ? (
                 <>
-                  <DropdownMenuItem>
-                    <a to="/profile">Profile</a>
+                  <DropdownMenuItem asChild>
+                    <Link to="/profile">Profile</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a to="/orders">Orders</a>
+                  <DropdownMenuItem asChild>
+                    <Link to="/orders">Orders</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={handleLogout}>
                     <LogOut className="mr-2 h-4 w-4" />
@@ -149,7 +135,7 @@ const Navbar = () => {
                   </DropdownMenuItem>
                 </>
               ) : (
-                <Dialog>
+                <Dialog open={openSignIn} onOpenChange={setOpenSignIn}>
                   <DialogTrigger asChild>
                     <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                       Sign In
@@ -161,9 +147,7 @@ const Navbar = () => {
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
                       <div className="grid grid-cols-4 items-center gap-4">
-                        <label htmlFor="email" className="text-right">
-                          Email
-                        </label>
+                        <label htmlFor="email" className="text-right">Email</label>
                         <input
                           id="email"
                           type="email"
@@ -173,9 +157,7 @@ const Navbar = () => {
                         />
                       </div>
                       <div className="grid grid-cols-4 items-center gap-4">
-                        <label htmlFor="password" className="text-right">
-                          Password
-                        </label>
+                        <label htmlFor="password" className="text-right">Password</label>
                         <input
                           id="password"
                           type="password"
@@ -188,12 +170,9 @@ const Navbar = () => {
                     <Button onClick={handleLogin}>Sign In</Button>
                     <p className="text-sm text-gray-600 text-center">
                       Don't have an account?{" "}
-                      <a
-                        to="/signup"
-                        className="font-medium text-blue-600 hover:underline"
-                      >
+                      <Link to="/signup" className="font-medium text-blue-600 hover:underline">
                         Sign up
-                      </a>
+                      </Link>
                     </p>
                   </DialogContent>
                 </Dialog>
@@ -201,7 +180,7 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" size="icon" onClick={() => navigate("/cart")}>
+          <Button variant="ghost" size="icon" onClick={handleCartClick}>
             <ShoppingCart size={24} />
           </Button>
         </div>
@@ -211,19 +190,9 @@ const Navbar = () => {
         <ul className="flex space-x-6 font-bold">
           {categories.map((category) => (
             <li key={category.name}>
-              <Dialog
-                open={openCategory === category.name}
-                onOpenChange={(isOpen) =>
-                  isOpen
-                    ? handleCategoryClick(category.name)
-                    : handleCloseDialog()
-                }
-              >
+              <Dialog open={openCategory === category.name} onOpenChange={(isOpen) => (isOpen ? handleCategoryClick(category.name) : handleCloseDialog())}>
                 <DialogTrigger asChild>
-                  <Button 
-                    variant="link"
-                    className="font-bold text-base hover:underline"
-                  >
+                  <Button variant="link" className="font-bold text-base hover:underline">
                     {category.name}
                   </Button>
                 </DialogTrigger>
